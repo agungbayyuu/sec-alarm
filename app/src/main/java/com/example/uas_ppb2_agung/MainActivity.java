@@ -7,6 +7,7 @@ import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -15,6 +16,7 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,8 +28,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     float x1, y1, z1;
     MediaPlayer player;
     TextView proximitysensor, data;
-    SensorManager MySensorManager;
-    Sensor MyProximitySensor;
+    ImageView help, about;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +40,26 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         hasilProximity = findViewById(R.id.hasilProximity);
         hasilFinger = findViewById(R.id.hasilFingerprint);
         data = findViewById(R.id.dataProximity);
+
+        about = findViewById(R.id.img_about);
+        help = findViewById(R.id.img_help);
+
         LinearLayout banner4 = (LinearLayout) findViewById(R.id.banner4);
 
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(MainActivity.this, about.class);
+                startActivity(a);
+            }
+        });
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(MainActivity.this, help.class);
+                startActivity(a);
+            }
+        });
         BiometricManager biometricManager = androidx.biometric.BiometricManager.from(this);
         switch (biometricManager.canAuthenticate()) {
 
