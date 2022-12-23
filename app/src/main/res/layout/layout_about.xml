@@ -7,12 +7,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <androidx.appcompat.widget.Toolbar
+        <ImageView
+            android:id="@+id/about_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            android:id="@+id/toolbar"
-            />
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:layout_margin="20dp"/>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
-        android:text="SecAlarm is applition used to secure your device from thief. This app use two sensor, first sensor is Accelerometer used to detect significant motion and second sensor is proximity to detect touch on phone. If that second alarm detected touch or motion alarm will turn on."/>
+        android:text="SecAlarm is application used to secure your device from thief. This app use two sensor, first sensor is Accelerometer used to detect significant motion and second sensor is proximity to detect touch on phone. If that second alarm detected touch or motion alarm will turn on."/>
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
