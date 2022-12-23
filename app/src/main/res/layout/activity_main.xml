@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey1"
+    tools:context=".MainActivity">
+
+            <LinearLayout
+                android:id="@+id/banner1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bc_icon2"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_baseline_lock_24"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Security Sensor"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text=" - Motion Sensor (Accelerometer)"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - Proximity Sensor"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - Fingerprint Sensor to stop Alarm"/>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Sensor"/>
+            <LinearLayout
+                android:id="@+id/banner2"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bc_icon2"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Motion Sensor (Accelerometer)"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_baseline_360_24"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Data X"
+                            android:id="@+id/dataX"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Data Y"
+                            android:id="@+id/dataY"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Data Z"
+                            android:id="@+id/dataZ"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textStyle="bold"
+                            android:id="@+id/hasilMotion"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/banner3"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bc_icon2"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proximity Sensor"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_baseline_touch_app_24"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Data X"
+                            android:id="@+id/dataProximity"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textStyle="bold"
+                            android:id="@+id/hasilProximity"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Stop Alarm"/>
+            <LinearLayout
+                android:id="@+id/banner4"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bc_icon2"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fingerprint Sensor"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_baseline_fingerprint_24"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fingerprint is use to stop alarm when alarm is on."/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:text=""
+                            android:id="@+id/hasilFingerprint"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+</LinearLayout>
