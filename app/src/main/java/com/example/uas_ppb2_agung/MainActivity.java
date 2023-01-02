@@ -16,6 +16,7 @@ import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     ImageView help, about, img_proximity, img_accelerometer, img_fingerprint;
     AudioManager audioManager;
     Button stop;
+    Vibrator vibrator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         img_fingerprint = findViewById(R.id.img_fingerprint);
         about = findViewById(R.id.img_about);
         help = findViewById(R.id.img_help);
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 hasilFinger.setText(null);
                 img_accelerometer.setImageResource(R.drawable.ic_baseline_360_24_green);
                 img_proximity.setImageResource(R.drawable.ic_baseline_touch_app_24_green);
+                vibrator.cancel();
             }
             @Override
             public void onAuthenticationFailed() {
@@ -157,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 hasilFinger.setText("Alarm is on, stop alarm using fingerprint");
                 playSound(1);
                 img_proximity.setImageResource(R.drawable.ic_baseline_touch_app_24_red);
+                vibrator.vibrate(1000000000);
 
             } else {
                 data.setText("Sensor is not covered");
@@ -177,6 +182,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 playSound(1);
                 hasilFinger.setText("Alarm is on, stop alarm using fingerprint");
                 img_accelerometer.setImageResource(R.drawable.ic_baseline_360_24);
+                vibrator.vibrate(1000000000);
             }
         }
     }
