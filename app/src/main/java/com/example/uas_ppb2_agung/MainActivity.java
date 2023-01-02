@@ -13,9 +13,12 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -28,7 +31,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     float x1, y1, z1;
     MediaPlayer player;
     TextView proximitysensor, data;
-    ImageView help, about;
+    ImageView help, about, img_proximity, img_accelerometer, img_fingerprint;
+    AudioManager audioManager;
+    Button stop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,13 +41,28 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         x = findViewById(R.id.dataX);
         y = findViewById(R.id.dataY);
         z = findViewById(R.id.dataZ);
+        stop = findViewById(R.id.button_stop);
         hasilMotion = findViewById(R.id.hasilMotion);
         hasilProximity = findViewById(R.id.hasilProximity);
         hasilFinger = findViewById(R.id.hasilFingerprint);
         data = findViewById(R.id.dataProximity);
-
+        img_accelerometer = findViewById(R.id.img_accelerometer);
+        img_proximity = findViewById(R.id.img_proximity);
+        img_fingerprint = findViewById(R.id.img_fingerprint);
         about = findViewById(R.id.img_about);
         help = findViewById(R.id.img_help);
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (player.isPlaying()){
+                    Toast.makeText(MainActivity.this, "Cannot stop service, before stop alarm !", Toast.LENGTH_LONG).show();
+                } else {
+                    finish();
+                }
+            }
+        });
+
 
         LinearLayout banner4 = (LinearLayout) findViewById(R.id.banner4);
 
@@ -97,6 +117,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 hasilMotion.setText(null);
                 hasilProximity.setText(null);
                 hasilFinger.setText(null);
+                img_accelerometer.setImageResource(R.drawable.ic_baseline_360_24_green);
+                img_proximity.setImageResource(R.drawable.ic_baseline_touch_app_24_green);
             }
             @Override
             public void onAuthenticationFailed() {
@@ -133,8 +155,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 data.setText("Sensor Covered");
                 hasilProximity.setText("The sensor is covered by something");
                 hasilFinger.setText("Alarm is on, stop alarm using fingerprint");
-
                 playSound(1);
+                img_proximity.setImageResource(R.drawable.ic_baseline_touch_app_24_red);
+
             } else {
                 data.setText("Sensor is not covered");
             }
@@ -149,10 +172,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             y.setText("Y: " + y1);
             z.setText("Z: " + z1);
 
-            if (x1 >= 7.0 || y1 >= 7.0) {
+            if (x1 >= 7.0 || y1 >= 7.0 || x1 <= -7.0 || y1 <= -7.0) {
                 hasilMotion.setText("Your phone moves significantly");
                 playSound(1);
                 hasilFinger.setText("Alarm is on, stop alarm using fingerprint");
+                img_accelerometer.setImageResource(R.drawable.ic_baseline_360_24);
             }
         }
     }
@@ -167,11 +191,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     player = MediaPlayer.create(MainActivity.this, R.raw.alarm);
                 }
                 if (arg == 1) {
-
-//                if (!player.isPlaying()) {
-                    //player.stop();
-                    //player.release();
-                    player.setLooping(false); // Set looping
+                    player.setLooping(true); // Set looping
                     player.start();
 //                }
                 }
@@ -179,5 +199,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 Toast.makeText(MainActivity.this, " Masuk Exception", Toast.LENGTH_LONG).show();
             }
         }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
+            // Consume the event and do not propagate it
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
+
+}
 

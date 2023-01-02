@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +8,16 @@
     android:orientation="vertical"
     android:background="@color/grey1"
     tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,10 +25,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="200dp"
-            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="Dashboard"
@@ -28,56 +37,173 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_info_24"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginTop="15dp" />
         <ImageView
             android:id="@+id/img_help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_help_24"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
             />
     </LinearLayout>
-            <LinearLayout
-                android:id="@+id/banner1"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/bc_icon2"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="200dp"
-                    android:src="@drawable/ic_baseline_lock_24"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="30dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Security Sensor"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text=" - Motion Sensor (Accelerometer)"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" - Proximity Sensor"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" - Fingerprint Sensor to stop Alarm"/>
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/banner"
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/bc_icon2"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/ic_baseline_lock_24"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Security Sensor"
+                            android:textSize="20dp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text=" - Motion Sensor (Accelerometer)"
+                            android:textSize="12dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - Proximity Sensor"
+                            android:textSize="12dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - Fingerprint Sensor"
+                            android:textSize="12dp"/>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/banner_accelerometer"
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bc_icon2"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/ic_baseline_360_24_black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sensor Accelerometer"
+                            android:textSize="15dp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="An accelerometer is a device that measures acceleration, which is the rate of change of velocity of an object. It can measure acceleration in one, two, or three dimensions, depending on the type of accelerometer."
+                            android:textSize="12dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/banner_proximity"
+                        android:layout_width="350dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/bc_icon2"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="200dp"
+                            android:src="@drawable/ic_baseline_touch_app_24_black"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sensor Proximity"
+                                android:textSize="15dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:text="A proximity sensor is a device that detects the presence of objects nearby without making physical contact. Proximity sensors can detect the presence of objects within a certain distance, typically in the range of a few centimeters to several meters."
+                                android:textSize="12dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/banner_fingerprint"
+                        android:layout_width="350dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/bc_icon2"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="200dp"
+                            android:src="@drawable/ic_baseline_fingerprint_24_black"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sensor Fingerprint"
+                                android:textSize="15dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:text="A fingerprint sensor is a device that is used to capture and digitize a person's fingerprint for the purpose of identity verification. Fingerprint sensors work by scanning the unique pattern of ridges and valleys on the surface of a finger. "
+                                android:textSize="12dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -111,7 +237,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="15dp"
-                        android:src="@drawable/ic_baseline_360_24"/>
+                        android:src="@drawable/ic_baseline_360_24_green"
+                        android:id="@+id/img_accelerometer"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -135,6 +262,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/red"
                             android:text=""
                             android:textStyle="bold"
                             android:id="@+id/hasilMotion"/>
@@ -166,7 +294,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="15dp"
-                        android:src="@drawable/ic_baseline_touch_app_24"/>
+                        android:src="@drawable/ic_baseline_touch_app_24_green"
+                        android:id="@+id/img_proximity"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -181,6 +310,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=""
+                            android:textColor="@color/red"
                             android:textStyle="bold"
                             android:id="@+id/hasilProximity"/>
                     </LinearLayout>
@@ -217,6 +347,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
+                        android:id="@+id/img_fingerprint"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="15dp"
@@ -234,10 +365,21 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:textStyle="bold"
+                            android:textColor="@color/red"
                             android:text=""
                             android:id="@+id/hasilFingerprint"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-</LinearLayout>
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bc_icon3"
+        android:text="stop securing"
+        />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
