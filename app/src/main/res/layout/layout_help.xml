@@ -21,63 +21,49 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@color/black"
-        android:text="Application Uasge Guide"/>
+        android:text="Application Usage Guide"/>
     <TextView
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1. Destinasi paling sering dikunjungi"/>
+        android:text="1. Click icon 'SecAlarm' then application will start."/>
     <TextView
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Berisikan list wisata yang paling menonjol pada daerah Malang Raya. Anda bisa men scroll ke arah kiri untuk melihat destinasi apa saja yang paling sering dikunjungi. "/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="2. Kategori"/>
+        android:text="2. Wait until logo 'SecAlarm' move to dashboard alarm. If application display alarm, is indicate your alarm is on."/>
     <TextView
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Terdapat 4 buah gambar, setiap gambar yang diklik akan mengarah pada list yang dipilih. Berisikan destinasi wisata sesuai kategori dan anda bisa melihat detail aplikasi yang berisikan detail aplikasi seperti deskripsi dan link pada maps."/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="3. Regulasi Covid-19"/>
+        android:text="3. Look dashboard its display 2 sensor accelerometer, proximity and fingerprint.
+ if your phone move significanly this sensor accelerometer will display 'Your Phone Move Significanly' and if sensor proximity on your phone covered by something this sensor proximity will display 'Your Sensor is covered by something'."/>
     <TextView
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ada 2 isi, yang pertama pemberitahuan untuk minimal vaksin pertama dan yang kedua himbauan untuk terus memakai masker dan menggunakan handsanitizer."/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="4. Tentang Aplikasi"/>
+        android:text="4. If your sensor (accelerometer and proximity) trigger by something, alarm will turn on. Sensor fingerprint will display
+'Alarm is on, stop alarm using fingerprint'."/>
     <TextView
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Berisikan penjelasan tentang aplikasi dan petunjuk pemakaian aplikasi. "/>
-
-
+        android:text="5. Where is alarm triggred will change color to be red."/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please report on google play if there any crash on this app. Thanks."/>
 </LinearLayout>
